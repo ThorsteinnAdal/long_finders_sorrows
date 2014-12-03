@@ -12,17 +12,20 @@
 
 
 \begin{document}
+\pagestyle{fancy}
 
 \input{./files/ship_data.tex}
 \newpage
+\pagestyle{empty}
+\input{./files/introduction_pages.tex}
 
+\newpage
 \input{./files/seemp_title.tex}
 
 \pagestyle{fancy}
 \input{./files/seemp_signature_page.tex}
 \newpage
-\input{./files/introduction_pages.tex}
-\newpage
+\setcounter{page}{1}
 \tableofcontents
 \newpage
 

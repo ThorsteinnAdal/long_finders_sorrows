@@ -98,3 +98,17 @@
 			#1%
 		}%
 	}
+	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% ReplaceCompany
+\newcommand{\seempInsertImage}[1][]{%
+\ifthenelse{%
+	\isempty{#1}%
+		}{%
+		
+		}{%
+			\begin{figure}
+				\centering
+				\includegraphics[width=0.75\textwidth]{#1}
+			\end{figure}
+		}%
+	}
