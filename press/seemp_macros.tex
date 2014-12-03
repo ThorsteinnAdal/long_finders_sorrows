@@ -1,0 +1,100 @@
+
+%%%% a typical "signature" trick
+\newcommand{\namesigdate}[2][8cm]{%
+\begin{minipage}{#1}
+    #2 \vspace{2.0cm}\hrule\smallskip
+    \small \textit{Signature}
+    \vspace{1.5 cm}\hrule\smallskip
+    \small \textit{Date}
+\end{minipage}
+}
+% usage \namesigdate{name to sign}
+
+%\usepackage{lipsum}
+
+%%%%%%%%%%%%%%%%%%% the chapter headings
+%
+\newcounter{seempChapter}
+\newcommand{\seempSection}[1]{%
+	\stepcounter{seempChapter}		
+	{
+		\par\noindent
+		\vspace{5pt}
+		\huge{\greenheavy{Chapter \theseempChapter: #1}}\par
+		\vspace{3pt}
+	}
+	\addcontentsline{toc}{section}{
+		\greenheavy{
+			Chapter \theseempChapter: #1}
+			}
+}	%
+
+%%%%%%%%%%%%%%%%%%% the section headings
+%
+\newcounter{seempsection}
+\newcommand{\seempSubsection}[1]{%
+	\stepcounter{seempsection}
+	{
+		\par\noindent
+		\vspace{3pt}
+		\Large{\blueheavy{\theseempsection. #1}}\par
+		\vspace{3pt}
+	}
+	\addcontentsline{toc}{subsubsection}{
+		\blueheavy{
+			\theseempsection. #1}
+			}
+}%
+
+
+%%%%%%%%%%%%%%%%% The gray headers
+%
+\newcounter{seempGrayHeaderCounter}
+\newcommand{\seempGrayHeader}[1]{%
+	\stepcounter{seempGrayHeaderCounter}	%
+	{
+		\par\noindent
+		\vspace{3pt}
+		\seempgray{\Large{\Alph{seempGrayHeaderCounter}. #1}}\par	
+		\vspace{3pt}
+	}%
+	\addcontentsline{toc}{subsection}{
+		\seempgray{
+			\Alph{seempGrayHeaderCounter}. #1}
+			} %
+}%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% table definitions for Ship Main Data
+\usepackage{tabu}
+\usepackage{longtable}
+
+\newcolumntype{G}[1]{>{\arraybackslash\color{seempgray}}p{#1\textwidth}}
+\newcolumntype{B}[1]{>{\arraybackslash\bf\color{blueheavy}}p{#1\textwidth}}
+
+\newenvironment{dataTable}{%
+\begin{longtabu} to 0.8\textwidth { G{0.2}  B{0.6} }
+\endhead
+\\
+\hline
+\multicolumn{2}{c}{continued...}\\
+\hline
+\endfoot
+
+\endlastfoot
+}{
+\end{longtabu}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% ReplaceCompany
+
+\usepackage{xifthen}
+
+\newcommand{\replaceCompany}[1][]{%
+	\ifthenelse{%
+	\isempty{#1}%
+		}{%
+			The company%
+		}{%
+			#1%
+		}%
+	}

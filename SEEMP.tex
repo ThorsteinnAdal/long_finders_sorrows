@@ -1,0 +1,88 @@
+% Here be the font packages and graphic handlers
+\input{./press/seemp_preamble.tex} 
+% Here be functions to define colors for fonts and lines
+\input{./press/seemp_colors.tex}
+% Here be function definitions and environment parameters
+\input{./press/seemp_macros.tex}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{./files/header_footer.tex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+\input{./files/ship_data.tex}
+\newpage
+
+\input{./files/seemp_title.tex}
+
+\pagestyle{fancy}
+\input{./files/seemp_signature_page.tex}
+\newpage
+\input{./files/introduction_pages.tex}
+\newpage
+\tableofcontents
+\newpage
+
+\seempSection{\textsc{Emission Monitoring Plan}}
+\seempGrayHeader{Monitoring plan verions}
+\seempSubsection{List of monitoring plan versions}
+
+\seempGrayHeader{Identification of the ship operator and the description of activities}
+\seempSubsection{Identification of Ship Operator}
+something important 
+\seempSubsection{Contact details and address for service}
+something important 
+\seempSubsection{Emission sources and ship characteristic}
+something important 
+\seempSubsection{Eligibility for simplified procedures for small emitters}
+something important 
+
+\seempGrayHeader{Calculation of \ce{CO2} emission}
+\seempSubsection{Activity data}
+something important 
+\seempSubsection{Uncertainty assessment}
+something important 
+\seempSubsection{Emission factors}
+something important 
+
+\seempGrayHeader{Simplified calculation of \ce{CO2} emissions}
+\seempSubsection{Simplified calculation}
+\seempSubsection{Data gaps}
+
+\seempGrayHeader{Description of procedures for data management and control activities}
+\seempSubsection{Management}
+\seempSubsection{Data flow activities}
+\seempSubsection{Control activities}
+\seempSubsection{Additional information}
+\seempSubsection{Member state specific further information}
+
+\seempGrayHeader{Description of the monitoring solution on the ship}
+\seempSubsection{General information}
+\seempSubsection{Information of data collected}
+\seempSubsection{Information of state manager for events}
+\seempSubsection{Ship energy profile}
+\seempSubsection{Ship data transfer onshore}
+
+\seempSection{\textsc{Measures}}
+
+\seempSection{\textsc{Goals}}
+
+\seempSection{\textsc{Evaluation}}
+
+
+\seempSection{\textsc{Report}}
+
+
+\seempSection{\textsc{Validate}}
+
+
+\seempSection{\textsc{Documentation}}
+\seempSubsection{Procedures}
+\seempSubsection{Regulatory related ship documents}
+\seempSubsection{Data structure (list of tags)}
+
+
+\end{document}

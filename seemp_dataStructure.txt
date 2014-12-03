@@ -1,0 +1,498 @@
+// 11.17.2014 - MongoDB collection structure for SEEMP input
+// Kristján Hall
+
+
+// NOTE
+// each section has been commented with it's SEEMP chapter section (see a hard copy of a SEEMP document) and the collection it comes from
+
+
+// SEEMP
+// collection: seemps
+//    NOTE: each seemp gets a following record, here (IMO, VERSION) is a unique key
+//    NOTE: some of these fields are editable in the livespan of the SEEMP - see section "List of monitorin plan versions below"**
+{ 
+  "_id" : "BmFe4ofWx78BRqQeG",
+  "changes" : "string",
+  "imo" : "8798456",
+  "name" : "Dettifoss",
+  "referenceDate" : "2014-11-17T14:04:10.581Z",
+  "referenceStatus" : "string",
+  "version" : "1"
+}
+
+
+
+
+// introduction
+// collection: seemp_data
+{ 
+  "_id" : "MkxXinYaQAHbM9GSn",
+  "data" : {
+    "introduction" : "text"
+  },
+  "section" : "A",
+  "seempId" : "BmFe4ofWx78BRqQeG"
+}
+
+
+// EEMP
+// collection: seemp_data
+{ 
+  "_id" : "TX3exdyHZsuog3YEm",
+  "data" : {
+    "content" : "text"
+  },
+  "section" : "B",
+  "seempId" : "BmFe4ofWx78BRqQeG"
+}
+
+
+// Policy
+// collection: seemp_data
+{ 
+  "_id" : "oYw7oSkmHqbs6gfcc",
+  "data" : {
+    "content" : "text"
+  },
+  "section" : "C",
+  "seempId" : "BmFe4ofWx78BRqQeG"
+}
+
+
+// Ship main data
+// collection: seemp_data
+{ 
+  "_id" : "F4nFxyeeNWWEnTJjv",
+  "data" : {
+    "mmsi" : "int",
+    "callsign" : "string",
+    "type" : "string",
+    "classification" : "string",
+    "owner" : "string",
+    "manager" : "string",
+    "grossTonnage" : "int",
+    "netTonnage" : "int",
+    "dwt" : "int",
+    "teu" : "int",
+    "build" : "int",
+    "portOfRegistry" : "string",
+    "homePort" : "string",
+    "lengthLOA" : "int",
+    "lengthLPP" : "int",
+    "breadth" : "int",
+    "depthUpperDeck" : "int",
+    "designDraught" : "int",
+    "heavyOilTankVolume" : "int",
+    "diselOilTank" : "int",
+    "waterBallast" : "int",
+    "maximumSpeed" : "int",
+    "serviceSpeed" : "int"
+  },
+  "section" : "D",
+  "seempId" : "BmFe4ofWx78BRqQeG"
+}
+
+
+// Ship technical data
+// collection: seemp_data
+{ 
+  "_id" : "uFCwJWhcKgKAug7Ea",
+  "data" : {
+    "mainEngineType" : "string",
+    "mainEnginePower" : "int",
+    "propeller" : "string",
+    "propellerDiameter" : "int",
+    "propellerRevolution" : "int",
+    "rudder" : "string",
+    "bowThruster" : "int",
+    "sternThruster" : "int",
+    "auxEngine1" : "string",
+    "auxEngine2" : "string",
+    "shaftGenerator" : "int",
+    "auxGen1" : "int",
+    "auxGen2" : "int",
+    "boilerType" : "string",
+    "poilerOutput" : "int"
+  },
+  "section" : "E",
+  "seempId" : "BmFe4ofWx78BRqQeG"
+}
+
+
+// Ship design index
+// collection: seemp_data
+{ 
+  "_id" : "Fq2CQTmKLLgnwnbR7",
+  "data" : {
+    "calcBy" : "string",
+    "eedi" : "int"
+  },
+  "section" : "F",
+  "seempId" : "BmFe4ofWx78BRqQeG"
+}
+
+
+// List of monitoring plan versions**
+//    NOTE: data in this section has to do with meta-data for the SEEMP document
+//    NOTE: this record is created when a seemp is first created
+//
+//    editable fields in the interface are...
+//      - referenceStatus
+//      - changes
+//    others are defined when the SEEMP is created and are immuntable
+{ 
+  "_id" : "BmFe4ofWx78BRqQeG",
+  "changes" : "string",
+  "imo" : "8798456",
+  "name" : "Dettifoss",
+  "referenceDate" : "2014-11-17T14:04:10.581Z",
+  "referenceStatus" : "string",
+  "version" : "1"
+}
+
+
+// Identification of ship operator
+// collection: seemp_data
+{ 
+  "_id" : "bC7Z9eygk9tj6fc3J",
+  "data" : {
+    "planStatus" : "string",
+    "shipOperator" : "string",
+    "uniqueIdentifier" : "string",
+    "monitoringPlan" : "string",
+    "actualPlanVersion" : "string",
+    "administeringState" : "string",
+    "competentAuthority" : "string",
+    "address" : "string"
+  },
+  "section" : "shipOperators",
+  "seempId" : "BmFe4ofWx78BRqQeG"
+}
+
+
+// Contact details and address for service
+// collection: seemp_data
+//    NOTE: in contact details we can have multiple records, one for each role...
+//    NOTE: here we can skip the "unique" field
+{ 
+  "_id" : "oBFFzhJFbymsdcNZx",
+  "data" : {
+    "role" : "string1",
+    "title" : "string",
+    "firstName" : "string",
+    "surname" : "string",
+    "jobTitle" : "string",
+    "organisationName" : "string",
+    "telephone" : "phonenumber",
+    "email" : "email"
+  },
+  "section" : "contactDetails",
+  "seempId" : "BmFe4ofWx78BRqQeG",
+  "unique" : "string1"
+}
+
+{ 
+  "_id" : "oBFFzhJFbymsdcNZx",
+  "data" : {
+    "role" : "string2",
+    "title" : "string",
+    "firstName" : "string",
+    "surname" : "string",
+    "jobTitle" : "string",
+    "organisationName" : "string",
+    "telephone" : "phonenumber",
+    "email" : "email"
+  },
+  "section" : "contactDetails",
+  "seempId" : "BmFe4ofWx78BRqQeG",
+  "unique" : "string2"
+}
+
+// ---- this needs to be updated such that we have one object called contacts containing an array of contact information instead of having seperate input for each contact
+
+
+// Emission sources and ship characteristics
+// collection: seemp_data
+//    NOTE: this section's data is split up into two parts
+//    - data: data about the monitoring plan
+//    - voyages: a list of numbered voyages, each containing an array of legs
+{ 
+  "_id" : "nXi4n7PiGXqxz9W2Q",
+  "data" : {
+    "monitoringPlan" : "string",
+    "dateOfSubmission" : "date",
+    "shipType" : "string",
+    "fuelType1" : "string",
+    "fuelType2" : "string",
+    "changeOver" : "string",
+    "annualCO2" : "int",
+    "voyages" : {
+      "1" : [
+        { 
+          "voyageNo" : "1",
+          "legNo" : "1",
+          "portA" : "ISREY",
+          "portB" : "ISVES",
+          "distance" : "123",
+          "IFO" : "12",
+          "MGO" : "45",
+          "etd" : "Wed, 01 Jan 2014 01:00:00 GMT",
+          "eta" : "Wed, 31 Dec 2014 12:59:00 GMT"
+        },
+        { 
+          "voyageNo" : "1",
+          "legNo" : "2",
+          "portA" : "ISVES",
+          "portB" : "GBIMH",
+          "distance" : "234",
+          "IFO" : "99",
+          "MGO" : "99",
+          "etd" : "Wed, 01 Jan 2014 13:00:00 GMT",
+          "eta" : "Wed, 01 Jan 2014 01:00:00 GMT"
+        }
+      ],
+      "2" : [
+        { 
+          "voyageNo" : "2",
+          "legNo" : "1",
+          "portA" : "ISREY",
+          "portB" : "ISVES",
+          "distance" : "456",
+          "IFO" : "78",
+          "MGO" : "45",
+          "etd" : "Wed, 01 Jan 2014 01:00:00 GMT",
+          "eta" : "Wed, 01 Jan 2014 13:02:00 GMT"
+        }
+      ]
+    },
+  },
+  "section" : "emissionSources",
+  "seempId" : "8dzG6FTNGnsKJyjRt"
+}
+
+
+// Eligibility
+// collection: seemp_data
+{
+  "_id" : "7KRQcvG8ByEieYM9g",
+  "data" : {
+    "method" : "string"
+  },
+  "section" : "eligibility",
+  "seempId" : "BmFe4ofWx78BRqQeG"
+}
+
+
+// Data activity
+// collection: seemp_data
+{ 
+  "_id" : "L8JER5N8bPt3FWpvi",
+  "data" : {
+    "fuelConsumption" : "string",
+    "loggingControl" : "string",
+    "bunkeringSource" : "string",
+    "dataIO" : "string",
+    "dataQuality" : "string",
+    "fuelMetersME" : "int",
+    "fuelMetersAUX" : "int",
+    "fuelMetersBoilers" : "int",
+    "factoryAccuracy" : "int",
+    "viscosityMeter" : "int",
+    "densityMeter" : "int",
+    "temperatureMeter" : "int",
+    "procedure" : "int",
+    "fuelConsumptionLogging" : "text",
+    "bunkerBalance" : "text"
+  },
+  "section" : "activityData",
+  "seempId" : "BmFe4ofWx78BRqQeG"
+}
+
+
+// Uncertainty assassment
+// collection: seemp_data
+{ 
+  "_id" : "TTz4oXSsESMuSfbfm",
+  "data" : {
+    "bunker" : "string",
+    "bunkerDetermined" : "string",
+    "equipment" : "string",
+    "evidence" : "string",
+    "source" : "string",
+    "level" : "int",
+    "comment" : "string",
+    "procedure" : "string"
+    },
+  "section" : "uncertainty",
+  "seempId" : "BmFe4ofWx78BRqQeG"
+}
+
+
+// Emission factors
+// collection: seemp_data
+{ 
+  "_id" : "fJMSF57bES2AtGRGQ",
+  "data" : {
+    "HFOCO2" : "int",
+    "MGOCO2" : "int",
+    "HFOSOx" : "int",
+    "MGOSOx" : "int",
+    "HFONOx" : "int",
+    "MGONOx" : "int",
+    "calorificValues" : "string",
+    "samplingBatches" : "string"
+  },
+  "section" : "emissionFactors",
+  "seempId" : "BmFe4ofWx78BRqQeG"
+}
+
+
+// Simplified calculation
+// collection: seemp_data
+{ "_id" : "pYrL7aKXKLNx7kEtD",
+  "data" : {
+    "HFOCO2" : "int",
+    "MGOCO2" : "int",
+    "HFOSOX" : "int",
+    "MGOSOX" : "int",
+    "HFONOX" : "int",
+    "MGONOX" : "int"
+  },
+  "section" : "simplifiedCalculation",
+  "seempId" : "BmFe4ofWx78BRqQeG"
+}
+
+
+// Data gaps
+// collection: seemp_data
+{ 
+  "_id" : "cczAN4bGL5adKcFcr",
+  "data" : {
+    "fuelEstimate" : "string",
+    "dataGap" : "string"
+  },
+  "section" : "dataGaps",
+  "seempId" : "BmFe4ofWx78BRqQeG"
+}
+
+
+// Management
+// collection: seemp_data
+{ 
+  "_id" : "vdKqTrNonjxegrBYt",
+  "data" : {
+    "responsible" : "string",
+    "monitoringEvaluation" : "string"
+  },
+  "section" : "management",
+  "seempId" : "BmFe4ofWx78BRqQeG"
+}
+
+
+// Data flow activities
+// collection: seemp_data
+{ 
+  "_id" : "cptDoTcCdJY8c8KvX",
+  "data" : {
+    "dataFlow" : "text"
+  },
+  "section" : "dataFlow",
+  "seempId" : "BmFe4ofWx78BRqQeG"
+}
+
+
+// Control activities
+// collection: seemp_data
+{ 
+  "_id" : "SPksWCop4Z7bmArgz",
+  "data" : {
+    "controlActivities" : "text"
+  },
+  "section" : "controlActivities",
+  "seempId" : "BmFe4ofWx78BRqQeG"
+}
+
+
+// Additional information
+// collection: seemp_data
+{ 
+  "_id" : "Fr7FwQf72fEP8R83E",
+  "data" : {
+    "additionalInformation" : "text"
+  },
+  "section" : "additionalInformation",
+  "seempId" : "BmFe4ofWx78BRqQeG"
+}
+
+
+// Member state specific further information
+// collection: seemp_data
+{ 
+  "_id" : "qdRi2mLnbXfhsosuv",
+  "data" : {
+    "furtherInformation" : "text"
+  },
+  "section" : "furtherInformation",
+  "seempId" : "BmFe4ofWx78BRqQeG"
+}
+
+
+
+______________________________________________________________________________________________________________________
+
+
+*** SEEMP STRUCTURE ***
+
+(introduction)
+
+1) CONTENTS
+
+2) EMISSION MONITORING PLAN
+  
+  a) Monitoring plan versions
+      1) List of monitoring plan versions
+
+  b) Identification of the ship operator and description of activities
+      2) Identification of Ship Operator
+      3) Contact Details and Address for Service
+      4) Emission Sources and Ship Characteristics
+      5) Eligibility for Simplified procedures for small emitters
+
+  c) Calculation of CO2 emission
+      6) Activity data
+      7) Uncertainty assessment
+      8) Emission factors
+
+  d) Simplified calculation of CO2 emissions
+      9) Simplified calculation
+      10) Data gaps
+
+  e) Description of procedures for data management and control activities
+      11) Management
+      12) Data flow activities
+      13) Control activities
+      14) Additional information
+      15) Member state specific further information
+
+  f) Description of the monitoring solution on the ship
+      16) General information
+      17) Information of data collected
+      18) Information of state manager for events
+      19) Ship energy profile
+      20) Ship data transfer onshore
+
+3) MEASURES
+  
+4) GOALS
+
+5) EVALUATION
+
+6) REPORT
+
+7) VALIDATE
+
+8) DOCUMENTATION
+  
+  21) Procedures
+  22) Regulatory related ship documents
+  23) Data structure (list of tags)
