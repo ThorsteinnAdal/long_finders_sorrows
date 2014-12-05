@@ -112,3 +112,63 @@
 			\end{figure}
 		}%
 	}
+	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Voyage table
+
+\newcounter{hellcount}
+\newcounter{lasthellcount}
+
+\newenvironment{voyageplanTable}{
+
+\footnotesize
+\begin{longtabu} to \linewidth {l | ll | c | cc | cc }
+
+
+\rowfont\bfseries &\multicolumn{2}{c | }{Ports} & Distance	& \multicolumn{2}{c |}{Main engine MT fuel} & \multicolumn{2}{c}{Aux engine(s) MT fuel}	\\ 
+\rowfont\bfseries 	\# &	Depart	&	Arrive	&	nmi	& HFO & MGO & HFO & MGO \\
+\hline
+\endhead
+
+\\ \hline
+\multicolumn{6}{c}{Continued\dots} \\
+\hline
+\endfoot
+ \hline
+\endlastfoot
+}{
+\end{longtabu}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Voyage table
+
+
+\newenvironment{portsplanTable}{
+\footnotesize
+\begin{longtabu} to \linewidth {l | l | c | cc  }
+
+
+\rowfont\bfseries &Port & Stop	&  \multicolumn{2}{c}{Aux engine(s) MT fuel}	\\ 
+\rowfont\bfseries 	\# &	Arrive	&	hours	& HFO & MGO \\
+\hline
+\endhead
+
+\\ \hline
+\multicolumn{5}{c}{Continued\dots} \\
+\hline
+\endfoot
+ \hline
+\endlastfoot
+}{
+\end{longtabu}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Voyage table
+
+\usepackage{lscape}
+
+\newenvironment{myLandsape}{
+\newpage
+\pagestyle{empty}
+\begin{landscape}
+}{
+\end{landscape}
+\pagestyle{fancy}
+}
